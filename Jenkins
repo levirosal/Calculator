@@ -6,16 +6,9 @@ pipeline {
 
             steps {
                 sh 'javac -d class/model/ src/model/*.java'
-            }
-
-            steps {
                 sh 'javac -d class/view/ src/view/*.java'
-            }
-
-            steps {
                 sh 'javac -d class/controller/ src/controller/*.java'
             }
-
         }
 
         stage ('Create jar Stage') {
