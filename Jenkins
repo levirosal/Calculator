@@ -5,7 +5,7 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                sh 'ifconfig'
+                sh 'ls -lh src/'
             }
         }
 
