@@ -5,7 +5,7 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                sh 'tree src/'
+                sh 'javac'
             }
         }
 
