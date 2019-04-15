@@ -5,14 +5,14 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                sh 'echo "Hello my old friend"'
+                sh 'ifconfig'
             }
         }
 
         stage ('Testing Stage') {
 
             steps {
-                sh 'echo "Testinggg"'
+                sh 'ls -lh'
             }
         }
 
