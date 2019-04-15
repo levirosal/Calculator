@@ -5,21 +5,30 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                sh 'javac'
+                sh 'javac -d class/model/ src/model/*.java'
+            }
+
+            steps {
+                sh 'javac -d class/view/ src/view/*.java'
+            }
+
+            steps {
+                sh 'javac -d class/controller/ src/controller/*.java'
+            }
+
+        }
+
+        stage ('Create jar Stage') {
+
+            steps {
+                sh 'jar -cvmf class/manifest.txt Calculator.jar class/'
             }
         }
 
-        stage ('Testing Stage') {
 
+        stage ('Verify Stage') {
             steps {
-                sh 'ls -lh'
-            }
-        }
-
-
-        stage ('Deployment Stage') {
-            steps {
-                sh 'echo "Deploymentt"'
+                sh 'ls -lh class/"'
             }
         }
     }
