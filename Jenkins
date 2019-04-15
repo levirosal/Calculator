@@ -5,9 +5,9 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                sh 'javac -d class/model/ src/model/*.java'
-                sh 'javac -d class/view/ src/view/*.java'
-                sh 'javac -d class/controller/ src/controller/*.java'
+                sh 'groovyc -d class/model/ src/model/*.groovy'
+                sh 'groovyc -d class/view/ src/view/*.groovy'
+                sh 'groovyc -d class/controller/ src/controller/*.groovy'
             }
         }
 
